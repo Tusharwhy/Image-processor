@@ -27,9 +27,9 @@ export const ImageProcessingProvider: React.FC<
   ImageProcessingProviderProps
 > = ({ children }) => {
   const [image, setImage] = useState<File | null>(null);
-  const [brightness, setBrightness] = useState(100);
-  const [contrast, setContrast] = useState(100);
-  const [saturation, setSaturation] = useState(100);
+  const [brightness, setBrightness] = useState(0);
+  const [contrast, setContrast] = useState(0);
+  const [saturation, setSaturation] = useState(0);
   const [rotation, setRotation] = useState(0);
   const [outputFormat, setOutputFormat] = useState<"png" | "jpeg">("png");
 

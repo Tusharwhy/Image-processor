@@ -21,8 +21,8 @@ const ImageControl: React.FC = () => {
         <label>Brightness: {brightness}</label>
         <input
           type="range"
-          min="0"
-          max="200"
+          min="-100"
+          max="100"
           value={brightness}
           onChange={(e) => setBrightness(Number(e.target.value))}
         />
@@ -31,8 +31,8 @@ const ImageControl: React.FC = () => {
         <label>Contrast: {contrast}</label>
         <input
           type="range"
-          min="0"
-          max="200"
+          min="-100"
+          max="100"
           value={contrast}
           onChange={(e) => setContrast(Number(e.target.value))}
         />
@@ -41,8 +41,8 @@ const ImageControl: React.FC = () => {
         <label>Saturation: {saturation}</label>
         <input
           type="range"
-          min="0"
-          max="200"
+          min="-100"
+          max="100"
           value={saturation}
           onChange={(e) => setSaturation(Number(e.target.value))}
         />
