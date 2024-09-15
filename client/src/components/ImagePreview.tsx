@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useImageProcessing } from "../context/ImageProcessingContext";
 import axios from "axios";
+import API from "../../ApiConfig";
 
 const ImagePreview: React.FC = () => {
   const { image, brightness, contrast, saturation, rotation, outputFormat } =
@@ -58,7 +59,7 @@ const ImagePreview: React.FC = () => {
 
         try {
           const response = await axios.post(
-            "http://localhost:5000/process-image",
+            `${API}/api/process-image`,
             formData,
             {
               responseType: "blob",
@@ -92,7 +93,7 @@ const ImagePreview: React.FC = () => {
 
       try {
         const response = await axios.post(
-          "http://localhost:5000/process-image",
+          `${API}/api/process-image`,
           formData,
           {
             responseType: "blob",
