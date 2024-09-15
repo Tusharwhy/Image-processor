@@ -22,7 +22,7 @@ const ImagePreview: React.FC = () => {
       img.onload = () => {
         const canvas = document.createElement("canvas");
         const ctx = canvas.getContext("2d");
-        const MAX_WIDTH = 800; // Max width for the preview image
+        const MAX_WIDTH = 800;
         const scale = MAX_WIDTH / img.width;
         canvas.width = MAX_WIDTH;
         canvas.height = img.height * scale;
@@ -38,7 +38,7 @@ const ImagePreview: React.FC = () => {
           },
           "image/jpeg",
           0.7
-        ); // Adjust quality as needed
+        );
       };
       img.src = e.target?.result as string;
     };
@@ -118,10 +118,20 @@ const ImagePreview: React.FC = () => {
   }
 
   return (
-    <div>
-      <img src={previewUrl} alt="Preview" style={{ maxWidth: "100%" }} />
-      <button onClick={processAndDownloadImage} disabled={isProcessing}>
-        {isProcessing ? "Processing..." : "Process and Download Image"}
+    <div className="flex flex-col items-center">
+      <img
+        src={previewUrl}
+        alt="Preview"
+        className="rounded-md shadow-lg max-w-full h-auto mb-6"
+      />
+      <button
+        onClick={processAndDownloadImage}
+        disabled={isProcessing}
+        className={`px-6 py-2 bg-[#141725] text-white font-semibold rounded-md shadow-lg 
+          transition-all duration-200 ease-in-out hover:bg-[#252a41] hover:scale-105 
+          disabled:opacity-50 disabled:cursor-not-allowed`}
+      >
+        {isProcessing ? "Processing..." : "Download Image"}
       </button>
     </div>
   );

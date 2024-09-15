@@ -44,8 +44,20 @@ const ImageUpload: React.FC = () => {
   };
 
   return (
-    <div>
-      <input type="file" accept="image/*" onChange={handleFileChange} />
+    <div className="flex items-center justify-center">
+      <label
+        htmlFor="file-upload"
+        className="cursor-pointer inline-flex items-center px-6 py-3 bg-[#141725]  text-white font-semibold rounded-lg shadow-md hover:bg-[#1c2036] focus:outline-none focus:ring-2 focus:ring-blue-400"
+      >
+        Upload Image
+      </label>
+      <input
+        id="file-upload"
+        type="file"
+        accept="image/*"
+        onChange={handleFileChange}
+        className="hidden"
+      />
     </div>
   );
 };
