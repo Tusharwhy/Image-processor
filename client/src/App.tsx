@@ -11,19 +11,16 @@ function App() {
         <div className="App h-screen w-screen  flex justify-center items-center">
           <div className="bg-slate-200  h-[80%] w-[80%] flex">
             <div className=" h-full w-1/2  p-10  ">
-              <div className=" flex  justify-center">
-                <h3 className="font-medium text-2xl">Upload image</h3>
+              <div className=" h-[60%] w-[60%] flex justify-center ">
+                <ImagePreview />
               </div>
-              <div className="mt-8 flex-col"></div>
-              <ImageUpload />
-              <ImageControl />
             </div>
             <div className=" h-full w-1/2  p-10  ">
               <div className=" flex  justify-center">
-                <h3 className="font-medium text-2xl">Image preview</h3>
-              </div>
-              <div className="mt-8 h-[40%] w-[40%] flex justify-center ">
-                <ImagePreview />
+                <div className="mt-8 flex-col">
+                  <ImageUpload />
+                  <ImageControl />
+                </div>
               </div>
             </div>
           </div>
